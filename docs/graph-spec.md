@@ -33,11 +33,12 @@ Represents a company that supplies components.
 | id | string | Yes | SUP001 |
 | name | string | Yes | Samsung SDI |
 | tier | integer | Yes | 1 |
-| country | string | Yes | South Korea |
+| riskLevel | string | No | High |
 
 ### Constraints
 
 - id must be unique
+- riskLevel values: Low, Medium, High
 
 ---
 
@@ -198,14 +199,14 @@ Factory assembles products.
 
 ---
 
-## MANUFACTURES
+## USED_IN
 
 Component is used in a product.
 
 ### Direction
 
 ```text
-(Component)-[:MANUFACTURES]->(Product)
+(Component)-[:USED_IN]->(Product)
 ```
 
 ### Example
@@ -213,7 +214,7 @@ Component is used in a product.
 ```text
 Battery Pack
       |
-      | MANUFACTURES
+      | USED_IN
       v
 Electric Scooter X1
 ```
