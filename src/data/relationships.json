@@ -1,0 +1,66 @@
+{
+  "supplierCountry": [
+    {
+      "supplierId": "SUP001",
+      "countryCode": "KR"
+    },
+    {
+      "supplierId": "SUP002",
+      "countryCode": "KR"
+    },
+    {
+      "supplierId": "SUP003",
+      "countryCode": "CN"
+    }
+  ],
+
+  "factoryCountry": [
+    {
+      "factoryId": "FAC001",
+      "countryCode": "IN"
+    }
+  ],
+
+  "supplies": [
+    {
+      "supplierId": "SUP001",
+      "componentId": "CMP001"
+    },
+    {
+      "supplierId": "SUP002",
+      "componentId": "CMP001"
+    }
+  ],
+
+  "dependsOn": [
+    {
+      "componentId": "CMP003",
+      "dependsOnId": "CMP002"
+    },
+    {
+      "componentId": "CMP002",
+      "dependsOnId": "CMP001"
+    }
+  ],
+
+  "usedIn": [
+    {
+      "componentId": "CMP003",
+      "productId": "PROD001"
+    }
+  ],
+
+  "assembles": [
+    {
+      "factoryId": "FAC001",
+      "productId": "PROD001"
+    }
+  ],
+
+  "alternativeSuppliers": [
+    {
+      "primarySupplierId": "SUP001",
+      "alternativeSupplierId": "SUP002"
+    }
+  ]
+}

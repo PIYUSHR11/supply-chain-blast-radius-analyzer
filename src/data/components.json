@@ -1,0 +1,20 @@
+[
+  {
+    "id": "CMP001",
+    "name": "Battery Cell",
+    "category": "Battery",
+    "criticality": 10
+  },
+  {
+    "id": "CMP002",
+    "name": "Battery Module",
+    "category": "Battery",
+    "criticality": 9
+  },
+  {
+    "id": "CMP003",
+    "name": "Battery Pack",
+    "category": "Battery",
+    "criticality": 10
+  }
+]
