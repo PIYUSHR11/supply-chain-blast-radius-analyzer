@@ -3,6 +3,38 @@ import { GraphRepository } from "@/repositories/graph.repository";
 export class GraphService {
   private repo = new GraphRepository();
 
+async getCountryRisk(countryCode: string) {
+  const result = await this.repo.run(
+    `
+    MATCH (country:Country {code: $countryCode})
+          <-[:LOCATED_IN]-
+          (supplier:Supplier)
+
+    MATCH (supplier)-[:SUPPLIES]->(component:Component)
+
+    OPTIONAL MATCH (productComponent:Component)
+          -[:DEPENDS_ON*0..]->
+          (component)
+
+    OPTIONAL MATCH (productComponent)-[:USED_IN]->(product:Product)
+
+    RETURN
+      country.name AS country,
+      collect(DISTINCT supplier.name) AS suppliers,
+      collect(DISTINCT component.name) AS components,
+      collect(DISTINCT product.name) AS products
+    `,
+    { countryCode }
+  );
+
+  return result.records.map((record) => ({
+    country: record.get("country"),
+    suppliers: record.get("suppliers"),
+    components: record.get("components"),
+    products: record.get("products"),
+  }));
+}
+
 async getSinglePointsOfFailure() {
   const result = await this.repo.run(`
     MATCH (s:Supplier)-[:SUPPLIES]->(c:Component)

@@ -12,7 +12,8 @@
       "seed:db": "tsx src/scripts/seed.ts",
       "verify:db": "tsx src/scripts/verify-seed.ts",
       "blast:db": "tsx src/scripts/test-blast-radius.ts",
-      "spof:db": "tsx src/scripts/test-spof.ts"			
+      "spof:db": "tsx src/scripts/test-spof.ts",
+      "country-risk:db": "tsx src/scripts/test-country-risk.ts"			
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
