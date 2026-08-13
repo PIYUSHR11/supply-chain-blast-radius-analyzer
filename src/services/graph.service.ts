@@ -3,6 +3,32 @@ import { GraphRepository } from "@/repositories/graph.repository";
 export class GraphService {
   private repo = new GraphRepository();
 
+async getSuppliers() {
+  const result = await this.repo.run(`
+    MATCH (s:Supplier)
+    RETURN s.id AS id, s.name AS name
+    ORDER BY s.name
+  `);
+
+  return result.records.map((r) => ({
+    id: r.get("id"),
+    name: r.get("name"),
+  }));
+}
+
+async getCountries() {
+  const result = await this.repo.run(`
+    MATCH (c:Country)
+    RETURN c.code AS code, c.name AS name
+    ORDER BY c.name
+  `);
+
+  return result.records.map((r) => ({
+    code: r.get("code"),
+    name: r.get("name"),
+  }));
+}
+
 async getCountryRisk(countryCode: string) {
   const result = await this.repo.run(
     `
