@@ -3,5 +3,10 @@
     "id": "PROD001",
     "name": "Electric Scooter X1",
     "category": "Vehicle"
-  }
+  },
+  {
+  "id": "PROD002",
+  "name": "Electric Scooter Pro",
+  "category": "Vehicle"
+ }
 ]

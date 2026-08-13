@@ -3,7 +3,28 @@ import { GraphRepository } from "@/repositories/graph.repository";
 export class GraphService {
   private repo = new GraphRepository();
 
-  async getBlastRadius(supplierId: string) {
+async getSinglePointsOfFailure() {
+  const result = await this.repo.run(`
+    MATCH (s:Supplier)-[:SUPPLIES]->(c:Component)
+
+    WITH c, collect(s) AS suppliers
+
+    WHERE size(suppliers) = 1
+
+    RETURN
+      suppliers[0].id AS supplierId,
+      suppliers[0].name AS supplierName,
+      collect(c.name) AS vulnerableComponents
+  `);
+
+  return result.records.map((record) => ({
+    supplierId: record.get("supplierId"),
+    supplierName: record.get("supplierName"),
+    vulnerableComponents: record.get("vulnerableComponents"),
+  }));
+}
+ 
+ async getBlastRadius(supplierId: string) {
     const result = await this.repo.run(
       `
       MATCH (s:Supplier {id: $supplierId})

@@ -29,6 +29,14 @@
     {
       "supplierId": "SUP002",
       "componentId": "CMP001"
+    },
+    {
+     "supplierId": "SUP003",
+     "componentId": "CMP004"
+    },
+    {
+     "supplierId": "SUP004",
+     "componentId": "CMP005"
     }
   ],
 
@@ -47,7 +55,15 @@
     {
       "componentId": "CMP003",
       "productId": "PROD001"
-    }
+    },
+    {
+     "componentId": "CMP004",
+     "productId": "PROD002"
+   },
+   {
+     "componentId": "CMP005",
+    "productId": "PROD002"
+   }
   ],
 
   "assembles": [

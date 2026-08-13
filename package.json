@@ -11,7 +11,8 @@
      "constraints:db": "tsx src/scripts/create-constraints.ts",
       "seed:db": "tsx src/scripts/seed.ts",
       "verify:db": "tsx src/scripts/verify-seed.ts",
-      "blast:db": "tsx src/scripts/test-blast-radius.ts"
+      "blast:db": "tsx src/scripts/test-blast-radius.ts",
+      "spof:db": "tsx src/scripts/test-spof.ts"			
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

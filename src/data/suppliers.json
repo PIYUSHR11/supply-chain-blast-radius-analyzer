@@ -16,5 +16,11 @@
     "name": "CATL",
     "tier": 1,
     "riskLevel": "Medium"
+  },
+  {
+  "id": "SUP004",
+  "name": "Bosch Mobility",
+  "tier": 1,
+  "riskLevel": "Low"
   }
 ]

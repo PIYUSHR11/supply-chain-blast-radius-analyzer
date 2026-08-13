@@ -16,5 +16,17 @@
     "name": "Battery Pack",
     "category": "Battery",
     "criticality": 10
-  }
+  },
+  {
+  "id": "CMP004",
+  "name": "Motor Controller",
+  "category": "Electronics",
+  "criticality": 10
+ },
+ {
+  "id": "CMP005",
+  "name": "Display Unit",
+  "category": "Electronics",
+  "criticality": 7
+ }
 ]
