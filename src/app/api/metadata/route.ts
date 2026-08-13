@@ -5,14 +5,16 @@ const service = new GraphService();
 
 export async function GET() {
   try {
-    const [suppliers, countries] = await Promise.all([
+    const [suppliers, countries, stats] = await Promise.all([
       service.getSuppliers(),
       service.getCountries(),
+      service.getDashboardStats(),
     ]);
 
     return NextResponse.json({
       suppliers,
       countries,
+      stats,
     });
   } catch (error) {
     console.error(error);

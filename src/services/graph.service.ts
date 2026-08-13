@@ -3,6 +3,45 @@ import { GraphRepository } from "@/repositories/graph.repository";
 export class GraphService {
   private repo = new GraphRepository();
 
+async getDashboardStats() {
+  const result = await this.repo.run(`
+    CALL {
+      MATCH (s:Supplier)
+      RETURN count(s) AS suppliers
+    }
+
+    CALL {
+      MATCH (c:Component)
+      RETURN count(c) AS components
+    }
+
+    CALL {
+      MATCH (p:Product)
+      RETURN count(p) AS products
+    }
+
+    CALL {
+      MATCH (c:Country)
+      RETURN count(c) AS countries
+    }
+
+    RETURN
+      suppliers,
+      components,
+      products,
+      countries
+  `);
+
+  const record = result.records[0];
+
+  return {
+    suppliers: record.get("suppliers").toNumber(),
+    components: record.get("components").toNumber(),
+    products: record.get("products").toNumber(),
+    countries: record.get("countries").toNumber(),
+  };
+}
+
 async getSuppliers() {
   const result = await this.repo.run(`
     MATCH (s:Supplier)

@@ -11,7 +11,11 @@
     {
       "supplierId": "SUP003",
       "countryCode": "CN"
-    }
+    },
+    {
+    "supplierId": "SUP004",
+    "countryCode": "DE"
+  }
   ],
 
   "factoryCountry": [
