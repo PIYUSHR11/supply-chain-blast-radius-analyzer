@@ -1,0 +1,20 @@
+[
+  {
+    "id": "SUP001",
+    "name": "Samsung SDI",
+    "tier": 1,
+    "riskLevel": "Low"
+  },
+  {
+    "id": "SUP002",
+    "name": "LG Energy",
+    "tier": 1,
+    "riskLevel": "Low"
+  },
+  {
+    "id": "SUP003",
+    "name": "CATL",
+    "tier": 1,
+    "riskLevel": "Medium"
+  }
+]
