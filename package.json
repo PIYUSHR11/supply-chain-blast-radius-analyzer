@@ -10,7 +10,8 @@
     "test:db": "tsx src/scripts/test-connection.ts",
      "constraints:db": "tsx src/scripts/create-constraints.ts",
       "seed:db": "tsx src/scripts/seed.ts",
-      "verify:db": "tsx src/scripts/verify-seed.ts"
+      "verify:db": "tsx src/scripts/verify-seed.ts",
+      "blast:db": "tsx src/scripts/test-blast-radius.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
