@@ -35,21 +35,23 @@ export default async function Home() {
   return (
     <main className="container mx-auto py-10 space-y-8">
       <DashboardHeader />
-   <div className="grid gap-6 lg:grid-cols-2"> 
+    
       <StatsCards
         {...metadata.stats}
       />
-
+  <div className="grid gap-6 lg:grid-cols-2">
       <SpofPanel
         items={spof}
       />
       <BlastRadiusPanel
         suppliers={metadata.suppliers}
        />
+    </div>
+    
      <CountryRiskPanel
       countries={metadata.countries}
       />
-    </div>
+    
     </main>
   );
 }

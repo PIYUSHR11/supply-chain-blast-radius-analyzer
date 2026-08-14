@@ -17,6 +17,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { Badge } from "@/components/ui/badge";
+
 interface Country {
   code: string;
   name: string;
@@ -125,15 +127,21 @@ export function CountryRiskPanel({
         {result?.map((item) => (
           <div
             key={item.country}
-            className="rounded-lg border p-4 space-y-3"
+            className="rounded-lg border bg-muted/30 p-4 space-y-3"
           >
-            <div className="font-semibold">
-              {item.country}
-            </div>
+            <div className="flex items-center justify-between">
+  <div className="font-semibold text-lg">
+    {item.country}
+  </div>
+
+  <Badge variant="secondary">
+    Risk Analysis
+  </Badge>
+</div>
 
             <div>
               <div className="text-sm font-medium">
-                Suppliers
+                Suppliers ({item.suppliers.length})
               </div>
               <ul className="list-disc pl-5 text-sm">
                 {item.suppliers.map((supplier) => (
@@ -146,7 +154,7 @@ export function CountryRiskPanel({
 
             <div>
               <div className="text-sm font-medium">
-                Components
+                Components ({item.components.length})
               </div>
               <ul className="list-disc pl-5 text-sm">
                 {item.components.map((component) => (
@@ -159,7 +167,7 @@ export function CountryRiskPanel({
 
             <div>
               <div className="text-sm font-medium">
-                Products
+                Products ({item.products.length})
               </div>
               <ul className="list-disc pl-5 text-sm">
                 {item.products.map((product) => (

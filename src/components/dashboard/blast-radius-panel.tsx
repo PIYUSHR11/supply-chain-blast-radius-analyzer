@@ -17,6 +17,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { Badge } from "@/components/ui/badge";
+
 interface Supplier {
   id: string;
   name: string;
@@ -126,7 +128,7 @@ console.log('suppx: ',suppliers)
         {result?.map((item) => (
           <div
             key={item.supplierId}
-            className="rounded-lg border p-4"
+            className="rounded-lg border bg-muted/30 p-4"
           >
             <div className="font-semibold">
               {item.supplierName}
@@ -135,7 +137,7 @@ console.log('suppx: ',suppliers)
             <div className="mt-2 text-sm">
               Affected Products:
             </div>
-
+         <Badge>	
             <ul className="mt-1 list-disc pl-5 text-sm">
               {item.affectedProducts.map(
                 (product) => (
@@ -145,6 +147,7 @@ console.log('suppx: ',suppliers)
                 )
               )}
             </ul>
+            </Badge>
           </div>
         ))}
       </CardContent>
