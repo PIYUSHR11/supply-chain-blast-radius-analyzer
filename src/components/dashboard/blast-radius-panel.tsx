@@ -47,8 +47,12 @@ export function BlastRadiusPanel({
     useState<string | null>(null);
 
   async function handleSupplierChange(
-    supplierId: string
+    supplierId: string | null
   ) {
+   
+   if(!supplierId){
+     return;	
+    }   
     setLoading(true);
     setError(null);
 

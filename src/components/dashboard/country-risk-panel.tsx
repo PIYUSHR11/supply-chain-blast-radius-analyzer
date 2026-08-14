@@ -48,8 +48,11 @@ export function CountryRiskPanel({
     useState<string | null>(null);
 
   async function handleCountryChange(
-    countryCode: string
+    countryCode: string | null 
   ) {
+    if(!countryCode){
+    return;
+    }
     setLoading(true);
     setError(null);
 
